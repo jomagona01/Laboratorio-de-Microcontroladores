@@ -8,6 +8,9 @@
 #define CS 7
 #define RST 6
 
+float r1 = 1000000;
+float r2 = 100000;
+
 // A custom glyph (a smiley)...
 static const byte glyph[] = { B00010000, B00110100, B00110000, B00110100, B00010000 };
 
@@ -41,20 +44,22 @@ void loop() {
 
   
   // Convierte el valor leído a un voltaje
-  float voltaje1 = (valor_leido1 * 5.0) / 1023.0; // Suponiendo que el sensor está conectado a 5V
+  float voltaje1_mc = (valor_leido1 * 5.0) / 1023.0; // Suponiendo que el sensor está conectado a 5V
+  float voltaje1 = (voltaje1_mc/((r2)/(r1 + r2)));
   
 
 
   // Convierte el valor leído a un voltaje
-  float voltaje2 = (valor_leido2 * 5.0) / 1023.0; // Suponiendo que el sensor está conectado a 5V
-  
+  float voltaje2_mc = (valor_leido2 * 5.0) / 1023.0; // Suponiendo que el sensor está conectado a 5V
+  float voltaje2 = (voltaje2_mc/((r2)/(r1 + r2)));
 
   // Convierte el valor leído a un voltaje
-  float voltaje3 = (valor_leido3 * 5.0) / 1023.0; // Suponiendo que el sensor está conectado a 5V
-  
+  float voltaje3_mc = (valor_leido3 * 5.0) / 1023.0; // Suponiendo que el sensor está conectado a 5V
+  float voltaje3 = (voltaje3_mc/((r2)/(r1 + r2)));
 
   // Convierte el valor leído a un voltaje
-  float voltaje4 = (valor_leido4 * 5.0) / 1023.0; // Suponiendo que el sensor está conectado a 5V
+  float voltaje4_mc = (valor_leido4 * 5.0) / 1023.0; // Suponiendo que el sensor está conectado a 5V
+  float voltaje4 = (voltaje4_mc/((r2)/(r1 + r2)));
   // Muestra el voltaje en la pantalla LCD
 
   lcd.setCursor(0, 0);
