@@ -16,7 +16,7 @@ void setup() {
    // Inicializa la pantalla LCD
   lcd.begin();
   lcd.setContrast(50);
-  lcd.setBrightness(100);
+  //lcd.setBrightness(100);
   // put your setup code here, to run once:
 
 }
